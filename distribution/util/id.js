@@ -20,7 +20,6 @@ function getSID(node) {
 }
 
 
-
 module.exports = {
   getNID: getNID,
   getSID: getSID,

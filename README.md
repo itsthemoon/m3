@@ -1,12 +1,12 @@
 # M3: Node Groups & Gossip Protocols
-> Full name: `<first last>`
-> Email:  `<email@brown.edu>`
-> Username:  `cslogin`
+> Full name: `Jackson Davis`
+> Email:  `jackson_m_davis@brown.edu`
+> Username:  `jdavis70`
 
 ## Summary
 > Summarize your implementation, including key challenges you encountered
 
-My implementation comprises `<number>` new software components, totaling `<number>` added lines of code over the previous implementation. Key challenges included `<1, 2, 3 + how you solved them>`.
+My implementation comprises `<number>` new software components, totaling `<number>` added lines of code over the previous implementation. Key challenges included `I was not able to solve them`.
 
 ## Correctness & Performance Characterization
 > Describe how you characterized the correctness and performance of your implementation
@@ -21,5 +21,9 @@ My implementation comprises `<number>` new software components, totaling `<numbe
 ## Time to Complete
 > Roughly, how many hours did this milestone take you to complete?
 
-Hours: `<time>`
+Hours: `25 and I did not finish.`
 
+
+notes:
+- I implemented local, except for gossip
+- Now i am working on implementing the all

@@ -31,9 +31,9 @@ if (args.config) {
   let nodeConfig = util.deserialize(args.config);
   global.nodeConfig.ip = nodeConfig.ip ? nodeConfig.ip : global.nodeConfig.ip;
   global.nodeConfig.port = nodeConfig.port ?
-        nodeConfig.port : global.nodeConfig.port;
+    nodeConfig.port : global.nodeConfig.port;
   global.nodeConfig.onStart = nodeConfig.onStart ?
-        nodeConfig.onStart : global.nodeConfig.onStart;
+    nodeConfig.onStart : global.nodeConfig.onStart;
 }
 
 const distribution = {
@@ -48,5 +48,6 @@ module.exports = distribution;
 
 /* The following code is run when distribution.js is run directly */
 if (require.main === module) {
+  console.log('Starting node with config: ', global.nodeConfig);
   distribution.node.start(global.nodeConfig.onStart);
 }

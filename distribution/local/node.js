@@ -31,45 +31,16 @@ const start = function(onStart) {
   const server = http.createServer((req, res) => {
     /* Your server will be listening for PUT requests. */
 
-    // Write some code...
-
     if (req.method !== 'PUT') {
       res.end(serialization.serialize(new Error('Method not allowed!')));
       return;
     }
-
-    /*
-      The path of the http request will determine the service to be used.
-      The url will have the form: http://node_ip:node_port/service/method
-    */
-
-
-    // Write some code...
-
 
     const pathname = url.parse(req.url).pathname;
     const [, service, method] = pathname.split('/');
 
     console.log(`[SERVER] (${global.nodeConfig.ip}:${global.nodeConfig.port})
         Request: ${service}:${method}`);
-
-
-    /*
-
-      A common pattern in handling HTTP requests in Node.js is to have a
-      subroutine that collects all the data chunks belonging to the same
-      request. These chunks are aggregated into a body variable.
-
-      When the req.on('end') event is emitted, it signifies that all data from
-      the request has been received. Typically, this data is in the form of a
-      string. To work with this data in a structured format, it is often parsed
-      into a JSON object using JSON.parse(body), provided the data is in JSON
-      format.
-
-      Our nodes expect data in JSON format.
-  */
-
-    // Write some code...
 
 
     let body = [];
@@ -80,7 +51,6 @@ const start = function(onStart) {
 
     req.on('end', () => {
       body = Buffer.concat(body).toString();
-
       let error;
 
       if (error = isValidBody(body)) {
@@ -104,17 +74,9 @@ const start = function(onStart) {
           return;
         }
 
-        /*
-      Here, we provide a default callback which will be passed to services.
-      It will be called by the service with the result of it's call
-      then it will serialize the result and send it back to the caller.
-        */
         const serviceCallback = (e, v) => {
           res.end(serialization.serialize([e, v]));
         };
-
-        // Write some code...
-
 
         console.log(`[SERVER] Args: ${JSON.stringify(args)} 
             ServiceCallback: ${serviceCallback}`);

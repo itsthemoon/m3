@@ -39,7 +39,6 @@ beforeAll((done) => {
   // Now, start the base listening node
   distribution.node.start((server) => {
     localServer = server;
-    // Now, start the nodes
     distribution.local.status.spawn(n1, (e, v) => {
       distribution.local.status.spawn(n2, (e, v) => {
         distribution.local.status.spawn(n3, (e, v) => {
@@ -354,3 +353,4 @@ test('(6 pts) all.gossip.send()', (done) => {
     });
   });
 });
+

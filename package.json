@@ -19,6 +19,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "lint": "^0.8.19",
     "yargs": "^17.7.2"
   }
 }
